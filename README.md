@@ -68,6 +68,8 @@ copyrightYear: 2017
 
 详情见demo文件夹
 
+编译:demo:mvn clean install
+
 编译不过的话请检查setting.xml以及网络状况，在这里贴出我自己的setting.xml
 
 ```xml
