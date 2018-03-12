@@ -1,0 +1,93 @@
+module topology {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:topology";
+    prefix "topology";
+
+    import ietf-inet-types { prefix inet; revision-date 2013-07-15; }
+
+    description "get links and ports information";
+
+    revision "2018-03-07" {
+        description "Initial revision of topology model";
+    }
+
+    grouping output-link{
+        leaf link-id{
+            type inet:uri;
+            description "link id";
+        }
+        leaf src-device{
+            type inet:uri;
+            description "source device";
+        }
+        leaf src-port{
+            type int32;
+            description "source port";
+        }
+        leaf dst-device{
+            type inet:uri;
+             description "destination device";
+        }
+        leaf dst-port{
+            type int32;
+            description "destination port";
+        }
+    }
+
+    grouping output-port{
+        leaf device-id{
+            type inet:uri;
+            description "link id";
+        }
+
+        leaf port-number{
+            type string;
+            description "port number";
+        }
+
+        leaf port-name{
+            type string;
+            description "port name";
+        }
+
+        leaf hardware-address{
+            type string;
+            description "hardware address";
+        }
+
+        leaf current-speed{
+            type int64;
+            description "current speed";
+        }
+
+
+        leaf maximum-speed{
+            type int64;
+            description "maximum speed";
+
+        }
+
+        leaf link-down{
+            type boolean;
+            description "link down";
+        }
+    }
+
+    rpc list-links-info{
+        output {
+            list links-info{
+                uses output-link;
+                description "link info";
+            }
+        }
+    }
+
+    rpc list-ports-info{
+        output{
+            list ports-info{
+                uses output-port;
+                description "port info";
+            }
+        }
+    }
+}
