@@ -13,3 +13,10 @@ topology分支：
 
 + 作用：获取全网拓扑信息以及SDN交换设备的网卡信息。
 + 入口：https://github.com/zlnnjit/opendaylight/tree/topology
+
+---
+
+initflowlldp分支：
+
++ 作用：根据设备的添加来触发OpenDaylight控制器LLDP流表的下发
++ 入口：https://github.com/zlnnjit/opendaylight/tree/initflowlldp
